@@ -1,2 +1,2 @@
 # Playlist Emotion Detector
-Detect how sad your Spotify playlist is by uisng supervised learning.
+Detect how sad is your Spotify playlist by uisng supervised learning.
