@@ -43,17 +43,20 @@ def get_attributes(link, features):
 
 
 # get dataset
+angry_playlists = ['https://open.spotify.com/playlist/37i9dQZF1EIhuCNl2WSFYd','https://open.spotify.com/playlist/37i9dQZF1EIgNZCaOGb0Mi','https://open.spotify.com/playlist/37i9dQZF1EId0AxZAYqRyP','https://open.spotify.com/playlist/37i9dQZF1EIcQR8GTL6NML','https://open.spotify.com/playlist/37i9dQZF1EIdjHvNyr7jpO']
 happy_playlists = ['https://open.spotify.com/playlist/37i9dQZF1EIerWLYY5lG2u','https://open.spotify.com/playlist/37i9dQZF1EIcLfJYjuP7bx','https://open.spotify.com/playlist/37i9dQZF1EVJSvZp5AOML2','https://open.spotify.com/playlist/37i9dQZF1EIgG2NEOhqsD7','https://open.spotify.com/playlist/37i9dQZF1DXdPec7aLTmlC']
 sad_playlists = ['https://open.spotify.com/playlist/37i9dQZF1EIdChYeHNDfK5','https://open.spotify.com/playlist/37i9dQZF1DWSqBruwoIXkA','https://open.spotify.com/playlist/37i9dQZF1EIg6gLNLe52Bd','https://open.spotify.com/playlist/37i9dQZF1DWW2hj3ZtMbuO','https://open.spotify.com/playlist/37i9dQZF1DWVV27DiNWxkR']
 happy = get_attributes(happy_playlists, features)
 sad = get_attributes(sad_playlists, features)
+angry = get_attributes(angry_playlists, features)
 
 # label
 happy['label'] = '1'
 sad['label'] = '0'
+angry['label'] = '2'
 
 # prepare training and testing data
-merged = pd.concat([happy, sad])
+merged = pd.concat([happy, sad, angry])
 training = merged.sample(frac=0.6, random_state=25)
 testing = merged.drop(training.index)
 X_train = training.drop('label', axis=1)
