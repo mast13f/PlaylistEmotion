@@ -1,5 +1,5 @@
 # Playlist Emotion Detector
-Detect how sad is your Spotify playlist by uisng supervised learning.
+Detect the emotion of your Spotify playlist by uisng supervised learning.
 
 Create a config.txt file and add your API token like this:
 ```
